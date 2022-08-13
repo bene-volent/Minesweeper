@@ -63,7 +63,7 @@ function createBoard() {
 
     case "2":
       row = 16;
-      col = 20;
+      col = 30;
       dif = 2;
       bombs = 99;
       break;
@@ -172,6 +172,10 @@ function handleClick(index)
   {
     sounds.mine.currentTime = 0;
     sounds.mine.play();
+    for (let index of bombIndex){
+      board[index].text = '💥'
+    }
+    genBoard()
   }
   else{
     sounds.click.currentTime = 0;
