@@ -3,20 +3,21 @@
 <head>
     <meta charset="UTF-8">
     
-    <title>Minesweeper</title>
+    <title>Bombsweeper</title>
     <script src="./game.js"></script>
     <link rel="stylesheet" href="./style.css">
+
 </head>
-<body onload="createBoard()">
-    <h1 id="title">Minesweeper</h1>
+<body onload="loadResources()">
+    <h1 id="title">Bombsweeper</h1>
     <div id="start">
         <label for="diff" class="start_fields">
             Difficulty
         </label>
         <select name="diff" id="diff" class="start_inputs">
-            <option value="0">Beginner</option>
-            <option value="1">Intermediate</option>
-            <option value="2">Hard</option>
+            <option value="0">Beginner - Bombs:10</option>
+            <option value="1">Intermediate - Bombs:40</option>
+            <option value="2">Hard - Bombs:99</option>
         </select>
         <br>
         <br>
@@ -24,8 +25,7 @@
     </div>
     <p id="clicks">
         <button id='classic_click' onclick="changeClick(1)">Reveal Click</button>
-        <button id='flag_click' onclick="changeClick(2)">Flag Click</button><br><br>
-        <label > For Touch Screen Users</label>
+        <button id='flag_click' onclick="changeClick(2)">Flag Click</button>
     </p>
     
         <div id="board">

@@ -27,8 +27,7 @@ body{
 
 .start_inputs{
     border-radius: 5px;
-    text-align: center;
-    width: 10em;
+    width: 15em;
 }
 
 .start_fields{
@@ -50,12 +49,36 @@ body{
 
 #board{
     margin:auto;
-    width:min(350px);
+    /* width:auto; */
+
     padding:10px;
     margin-top: 0.5em;
     border-radius: 5px;
     text-align: center;
+
+    display: flex;
+    flex-wrap: wrap;
+    /* background-color: black; */
 }
+
+#board > span{
+    cursor:default;
+    /* zoom:10%; */
+    background-color: rgba(0, 145, 248, 0.543);;
+    color:white;
+    padding: 1px;
+    font-size: 110%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-family: "verdana",sans;
+    margin: 1px;
+    /* margin: auto;
+    border: 5px; */
+    
+}
+
 
 #clicks{
     font:italic  "verdana",sans;
@@ -66,14 +89,4 @@ body{
     margin:auto;
     margin-top: 0.5em;
     width:350px;
-}
-
-.cell{
-    cursor:default;
-    zoom:120%;
-    text-align:center;
-    /* background-color: black; */
-    /* margin: auto;
-    border: 5px; */
-    
 }

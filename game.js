@@ -1,12 +1,32 @@
 var board = [];
 var rows,cols
 
-var flagged = [] 
+var flagged = []
 var bombIndex = []
 
 var currentClickType = 1
 
-var dead = false,victory=false
+
+var boardWidth = 0
+var cellSize = 30
+
+var dead = false;
+var victory=false;
+
+var sounds = {
+                'click':new Audio(),
+                'win':new Audio(),
+                'mine':new Audio(),              
+              }
+
+
+function loadResources(){
+  click = new Audio('./res/audio/click.wav');
+  mine = new Audio('./res/audio/mine.wav')
+  win = new Audio('./res/audio/win.wav')
+  sounds = {click,win,mine}
+}
+
 function invalidatePosInteger(value) {
   return value <= 0 || value == "";
 }
@@ -16,7 +36,7 @@ function changeClick(type){
 }
 
 function createCell() {
-  return {'text':"⏹️",'revealed':false,'bomb':false,'flagged':false}
+  return {'text':"-",'revealed':false,'bomb':false,'flagged':false}
 }
 
 function createBoard() {
@@ -42,8 +62,8 @@ function createBoard() {
       break;
 
     case "2":
-      row = 20;
-      col = 16;
+      row = 16;
+      col = 20;
       dif = 2;
       bombs = 99;
       break;
@@ -56,6 +76,7 @@ function createBoard() {
   board = [];
   flagged = []
   bombIndex = []
+  boardWidth = col * cellSize + col * 2+col * 2;
 
  
 
@@ -82,7 +103,6 @@ function createBoard() {
 
   index++;
 
-  console.log(index,5);
 }
   [rows,cols] = [row,col]
   
@@ -96,7 +116,7 @@ function flagBoard(r,c){
   var ind = r * cols + c;
 
   if (board[ind].flagged) {
-    board[ind].text = '⏹️'
+    board[ind].text = '-'
     board[ind].flagged = false
     flagged.splice( flagged.indexOf(ind),1)
 
@@ -117,12 +137,12 @@ function indexToRC(index){
 
 function handleClick(index)
 { 
-  console.log(index,indexToRC(index))
 
   if (dead){
+    
     alert("You have hit a bomb!\nGame Over")
       createBoard()
-      return console.log("11")
+      return 
   }
   if (!dead && !victory){
     if (currentClickType == 1)
@@ -142,12 +162,21 @@ function handleClick(index)
       if (won){
         alert("You won")
         victory = true;
+        sounds.win.currentTime = 0;
+        sounds.win.play();
       }
     }
     genBoard()
   }
-  
-
+  if (dead)
+  {
+    sounds.mine.currentTime = 0;
+    sounds.mine.play();
+  }
+  else{
+    sounds.click.currentTime = 0;
+    sounds.click.play();
+  }
     
 }
 
@@ -158,12 +187,15 @@ function genBoard() {
       var span = document.createElement('span')
       span.setAttribute('onclick',`handleClick(${index})`)
       span.setAttribute('class',`cell`)
+      span.style.width = `${cellSize}px`
+      span.style.height = `${cellSize}px`
       span.innerHTML = board[index].text
       Board.appendChild(span);
-      if ((index + 1) % cols == 0) {
-          Board.appendChild(document.createElement("br"));
-      }
+      // if ((index + 1) % cols == 0) {
+      //     Board.appendChild(document.createElement("br"));
+      // }
     }
+    Board.style.width=`${boardWidth}px`
 
 }
 
@@ -173,10 +205,10 @@ function revealBoard(r,c){
 
   var count = 0 ;
 
-  if (board[ind].revealed) return;
+  if (board[ind].revealed || board[ind].flagged) return;
 
   if (board[ind].bomb){
-      board[ind].text = '💣';
+      board[ind].text = '💥';
       
       return true;
   }
@@ -192,7 +224,7 @@ function revealBoard(r,c){
     }
   }
   
-  board[ind].text = ['0️⃣','1️⃣','2️⃣','3️⃣','4️⃣','5️⃣','6️⃣','7️⃣','8️⃣'][count]
+  board[ind].text = count
   board[ind].revealed = true;
 
   if (count == 0){
