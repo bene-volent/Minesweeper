@@ -7,7 +7,7 @@
     <script src="./game.js"></script>
     <link rel="stylesheet" href="./style.css">
 </head>
-<body>
+<body onload="createBoard()">
     <h1 id="title">Minesweeper</h1>
     <div id="start">
         <label for="diff" class="start_fields">
@@ -22,7 +22,14 @@
         <br>
         <button id='start_button' onclick="createBoard()">Start</button>
     </div>
-    <div id="board">
-    </div>
+    <p id="clicks">
+        <button id='classic_click' onclick="changeClick(1)">Reveal Click</button>
+        <button id='flag_click' onclick="changeClick(2)">Flag Click</button><br><br>
+        <label > For Touch Screen Users</label>
+    </p>
+    
+        <div id="board">
+        </div>
+    
 </body>
 </html>

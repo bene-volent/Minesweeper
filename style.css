@@ -1,5 +1,5 @@
 body{
-    background-color: rgb(48, 154, 172);
+    background-color: rgba(0, 145, 248, 0.543);
 }
 #title{
     font:italic 300% "verdana",sans;
@@ -8,7 +8,7 @@ body{
     padding: 10px;
     border-radius: 5px;
     margin:auto;
-    width:400px
+    width:350px
 }
 
 #start{
@@ -18,7 +18,7 @@ body{
         padding: 10px;
         border-radius: 5px;
         margin:auto;
-        width:400px;
+        width:350px;
         margin-top: 0.5em;
 }
 
@@ -48,12 +48,31 @@ body{
 
 
 #board{
-    background-color: azure;
-    width: 400px;
     margin:auto;
+    width:min(350px)
     padding:10px;
     margin-top: 0.5em;
     border-radius: 5px;
     text-align: center;
+}
+
+#clicks{
+    font:italic  "verdana",sans;
+    background-color: azure;
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+    margin:auto;
+    margin-top: 0.5em;
+    width:350px;
+}
+
+.cell{
+    cursor:default;
+    zoom:120%;
+    text-align:center;
+    /* background-color: black; */
+    /* margin: auto;
+    border: 5px; */
     
 }
