@@ -1,62 +1,61 @@
-body{
+body {
     background-color: rgba(0, 145, 248, 0.543);
-    background-image: linear-gradient(to bottom right,rgba(0, 145, 248, 0.543),rgba(107, 191, 252, 0.872));
+    background-image: linear-gradient(to bottom right,
+            rgba(0, 145, 248, 0.543),
+            rgba(107, 191, 252, 0.872));
 }
 
-
-#heading{
-    font:italic 100% "verdana",sans;
+#heading {
+    font: italic 100% "verdana", sans;
     background-color: azure;
     text-align: center;
     padding: 10px;
     border-radius: 5px;
-    margin:auto;
-    width:350px;
+    margin: auto;
+    width: 350px;
     height: 40px;
-    display:flex;
+    display: flex;
     align-items: center;
     justify-content: center;
 }
-#start{
-        font:italic  "verdana",sans;
-        background-color: azure;
-        text-align: center;
-        padding: 10px;
-        border-radius: 5px;
-        margin:auto;
-        width:350px;
-        margin-top: 0.5em;
+
+#start {
+    font: italic "verdana", sans;
+    background-color: azure;
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+    margin: auto;
+    width: 350px;
+    margin-top: 0.5em;
 }
 
-
-
-.start_inputs{
+.start_inputs {
     border-radius: 5px;
     width: 15em;
 }
 
-.start_fields{
-    font:oblique 80% "verdana";
+.start_fields {
+    font: oblique 80% "verdana";
     font-weight: bold;
     padding-right: 1em;
     text-align: left;
 }
 
-#start_button{
-    background-color:rgb(77, 200, 222);
-    border-color:rgb(75, 209, 209);
+#start_button {
+    background-color: rgb(77, 200, 222);
+    border-color: rgb(75, 209, 209);
     border-radius: 20%;
     width: 20%;
     text-align: center;
-    font:bold 80% "verdana";
+    font: bold 80% "verdana";
 }
 
-
-#board{
-    margin:auto;
+#board {
+    margin: auto;
     /* width:auto; */
 
-    padding:10px;
+    padding: 10px;
     margin-top: 0.5em;
     border-radius: 5px;
     text-align: center;
@@ -66,32 +65,30 @@ body{
     /* background-color: black; */
 }
 
-#board > span{
-    cursor:pointer;
+#board>span {
+    cursor: pointer;
     /* zoom:10%; */
-    background-color: rgba(0, 145, 248, 0.543);;
-    color:white;
+    background-color: rgba(0, 145, 248, 0.543);
+    color: white;
     padding: 1px;
     font-size: 110%;
     display: flex;
     justify-content: center;
     align-items: center;
     font-weight: bold;
-    font-family: "verdana",sans;
+    font-family: "verdana", sans;
     margin: 1px;
     /* margin: auto;
     border: 5px; */
-    
 }
 
-
-#clicks{
-    font:italic  "verdana",sans;
+#clicks {
+    font: italic "verdana", sans;
     background-color: azure;
     text-align: center;
     padding: 10px;
     border-radius: 5px;
-    margin:auto;
+    margin: auto;
     margin-top: 0.5em;
-    width:350px;
+    width: 350px;
 }
