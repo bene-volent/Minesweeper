@@ -1,35 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    
+  <head>
+    <meta charset="UTF-8" />
+
     <title>Bombsweeper</title>
     <script src="./game.js"></script>
-    <link rel="stylesheet" href="./style.css">
-
-</head>
-<body onload="loadResources()">
-    <h1 id="title">Bombsweeper</h1>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body onload="loadResources()">
+    <div id="heading">
+      <img src="./res/img/icon.png" alt="" width="50px" height="50px" />
+      <h2 id="title">Bombsweeper</h2>
+    </div>
     <div id="start">
-        <label for="diff" class="start_fields">
-            Difficulty
-        </label>
-        <select name="diff" id="diff" onchange="createBoard()" class="start_inputs">
-            <option value="0">Beginner - Bombs:10</option>
-            <option value="1">Intermediate - Bombs:40</option>
-            <option value="2">Hard - Bombs:99</option>
-        </select>
-        <br>
-        <br>
-        <button id='start_button' onclick="createBoard()">Start</button>
+      <label for="diff" class="start_fields"> Difficulty </label>
+      <select
+        name="diff"
+        id="diff"
+        onchange="createBoard()"
+        class="start_inputs"
+      >
+        <option value="0">Beginner - Bombs:10</option>
+        <option value="1">Intermediate - Bombs:40</option>
+        <option value="2">Hard - Bombs:99</option>
+      </select>
+      <br />
+      <br />
+      <button id="start_button" onclick="createBoard()">Start</button>
     </div>
     <p id="clicks">
-        <button id='classic_click' onclick="changeClick(1)">Reveal Click</button>
-        <button id='flag_click' onclick="changeClick(2)">Flag Click</button>
+      <button id="classic_click" onclick="changeClick(1)">Reveal Click</button>
+      <button id="flag_click" onclick="changeClick(2)">Flag Click</button>
     </p>
-    
-        <div id="board">
-        </div>
-    
-</body>
+
+    <div id="board"></div>
+  </body>
 </html>

@@ -33,6 +33,8 @@ function invalidatePosInteger(value) {
 
 function changeClick(type){
   currentClickType = type;
+  
+
 }
 
 function createCell() {
@@ -202,6 +204,8 @@ function genBoard() {
     Board.style.width=`${boardWidth}px`
 
 }
+
+
 
 function revealBoard(r,c){
 

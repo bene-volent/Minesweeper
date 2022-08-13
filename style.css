@@ -2,16 +2,21 @@ body{
     background-color: rgba(0, 145, 248, 0.543);
     background-image: linear-gradient(to bottom right,rgba(0, 145, 248, 0.543),rgba(107, 191, 252, 0.872));
 }
-#title{
-    font:italic 300% "verdana",sans;
+
+
+#heading{
+    font:italic 100% "verdana",sans;
     background-color: azure;
     text-align: center;
     padding: 10px;
     border-radius: 5px;
     margin:auto;
-    width:350px
+    width:350px;
+    height: 40px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
 }
-
 #start{
         font:italic  "verdana",sans;
         background-color: azure;
@@ -62,7 +67,7 @@ body{
 }
 
 #board > span{
-    cursor:default;
+    cursor:pointer;
     /* zoom:10%; */
     background-color: rgba(0, 145, 248, 0.543);;
     color:white;
