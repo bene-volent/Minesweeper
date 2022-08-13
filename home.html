@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <title>Minesweeper</title>
+    <script src="./game.js"></script>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <h1 id="title">Minesweeper</h1>
+    <div id="start">
+        <label for="diff" class="start_fields">
+            Difficulty
+        </label>
+        <select name="diff" id="diff" class="start_inputs">
+            <option value="0">Beginner</option>
+            <option value="1">Intermediate</option>
+            <option value="2">Hard</option>
+        </select>
+        <br>
+        <br>
+        <button id='start_button' onclick="createBoard()">Start</button>
+    </div>
+    <div id="board">
+    </div>
+</body>
+</html>
